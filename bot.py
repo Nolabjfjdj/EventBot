@@ -9,8 +9,8 @@ import threading
 # ─────────────────────────────────────────
 PAIRS = [
     {
-        "voice_id": 1216030475777216624,   # ID de ╰『🏕』évent
-        "text_id":  1216030117470670958,   # ID de ╭『🎊』chat-évent
+        "voice_id": 123456789012345678,   # ID de ╰『🏕』évent
+        "text_id":  987654321098765432,   # ID de ╭『🎊』chat-évent
     },
     # Tu peux en ajouter d'autres ici :
     # {
@@ -33,6 +33,10 @@ class HealthHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
         self.wfile.write(b"EventBot OK")
+
+    def do_HEAD(self):
+        self.send_response(200)
+        self.end_headers()
 
     def log_message(self, *args):
         pass  # silence les logs HTTP
